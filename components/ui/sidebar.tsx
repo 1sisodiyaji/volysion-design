@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import React, { useState, createContext, useContext } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
@@ -143,11 +143,7 @@ export const MobileSidebar = ({
   );
 };
 
-export const SidebarLink = ({
-  link,
-  className,
-  ...props
-}: {
+type SidebarLinkProps = Omit<React.ComponentProps<typeof Link>, "href"> & {
   link: {
     label: string | React.ReactNode;
     href: string;
@@ -155,8 +151,13 @@ export const SidebarLink = ({
     active?: boolean;
   };
   className?: string;
-  props?: LinkProps;
-}) => {
+};
+
+export const SidebarLink = ({
+  link,
+  className,
+  ...props
+}: SidebarLinkProps) => {
   const { open, animate } = useSidebar();
   return (
     <Link

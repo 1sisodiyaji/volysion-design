@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
-import { Menu, FileText, Database, Server, Compass } from "lucide-react";
+import { Menu, Database, Server, Compass } from "lucide-react";
 import Link from "next/link";
 import ThemeToggler from "@/components/common/ThemeToggler";
 import { motion, AnimatePresence } from "motion/react";
@@ -74,7 +74,7 @@ export default function DocsPage() {
                     active: activeChapter === chapter.id,
                     icon: chapter.icon,
                   }}
-                  className={activeChapter === chapter.id ? "bg-neutral-100 dark:bg-white/[0.04] text-neutral-900 dark:text-white" : ""}
+                  className={activeChapter === chapter.id ? "bg-neutral-100 dark:bg-white/4 text-neutral-900 dark:text-white" : ""}
                   onClick={(e) => { e.preventDefault(); setActiveChapter(chapter.id); }}
                 />
               ))}
