@@ -4,7 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 @variant dark (&:where(.dark, .dark *));
-@plugin "@tailwindcss/typography";
 
 @theme inline {
   --color-background: var(--background);
@@ -134,4 +133,16 @@
   html {
     @apply font-sans;
   }
+}
+.font-manrope{
+  font-family: var(--font-manrope);
+  font-optical-sizing: auto;
+}
+.font-montserrat{
+  font-family: var(--font-montserrat);
+  font-optical-sizing: auto;
+}
+*{
+    font-family: var(--font-manrope);
+  font-optical-sizing: auto;
 }
